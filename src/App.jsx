@@ -1,11 +1,15 @@
+import { useState } from "react";
+import { LoadingScreen } from "./components/LoadingScreen";
+import "./App.css";
 
-import './App.css'
 
 function App() {
-  return(
 
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  return(
     <><h1>
-      Hello
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
     </h1>
     </>
   )
